@@ -1,159 +1,171 @@
 <html>
+
 <head>
-	<title>Admissions</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admissions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<style>
-h1{
-   color:black;
-   background-color:red;
-   text-align:center;
-  }
-a{
-	color: red;
-}
-.portal{
-	text-align: center;
-	border: solid 10px blue;
-	background-color: lightgrey;
-	border-radius: 20px;
-}
-.warnings{
-	text-align: center;
-}
-.selection{
-	color: blue;
-}
-p{
-	color: black;
-	background-color: lightsteelblue;
-}
-label
-{
-	color: black;
-}
-.name{
-	background-color: white;
-	color: darkgreen;
-}
-.stream{
-	background-color: white;
-}
-.note{
-	background-color: white;
-	color: green;
-}
-.userinputs{
-	text-align: center;
-	border: solid 10px blue;
-	border-radius: 20px;
-	background-color: lightgrey;
-}
-table{
-	text-align: center;
-}
-.result1{
-	text-align: center;
-	color: darkgreen;
-}
-.fullinfo{
-	background-color: white;
-	color: green;
-	font-size: medium;
-}
-</style>
+    <style>
+        h1 {
+            color: black;
+            background-color: turquoise;
+            text-align: center;
+        }
+
+        a {
+            color: red;
+        }
+
+        .portal {
+            text-align: center;
+            border: solid 10px blue;
+            background-color: lightgrey;
+            border-radius: 20px;
+        }
+
+        .warnings {
+            text-align: center;
+        }
+
+        .selection {
+            color: blue;
+        }
+
+        p {
+            color: black;
+            background-color: lightsteelblue;
+        }
+
+        label {
+            color: black;
+        }
+
+        .name {
+            background-color: pink;
+            color: darkmagenta;
+        }
+
+        .stream {
+            background-color: lightgrey;
+        }
+
+        .note {
+            background-color: lightgrey;
+            color: green;
+        }
+
+        .userinputs {
+            text-align: center;
+            border: solid 10px blue;
+            border-radius: 20px;
+            background-color: lightgrey;
+        }
+
+        table {
+            text-align: center;
+        }
+
+        .result1 {
+            text-align: center;
+            color: darkgreen;
+        }
+
+        .fullinfo {
+            background-color: lightgrey;
+            color: green;
+            font-size: medium;
+        }
+    </style>
 </head>
-<body style="background-color: #F7BE81;">
-<h1>ADMISSIONS PORTAL</h1>
-<div class="portal">
-	<br>
-	<a href="https://www.sastra.edu/admissions-2021/3268-applicant-portal.html"><b>CLICK HERE</b></a> <b>for online application portal of Sastra University</b>
-	<br>
-	<br>
-	<a href="https://www.sastra.edu/sastraadmissions/"><b>CLICK HERE</b></a> <b>for</b> <i><b>Information</b></i> <b>regarding Admissions in Sastra University</b>
-	<br>
-	<br>
-	<p class="fullinfo"><span class="glyphicon glyphicon-arrow-right"> For More Information Regarding Admissions, Visit <a href="https://www.sastra.edu/"><b>SASTRA</b></a>. <span class="glyphicon glyphicon-arrow-left"></p>
-</div>
-<br>
-<div class="warnings">
-	<p style="color: darkslateblue; background-color: whitesmoke;"><i><b>Quick Validation based on Previous year patterns for Round-I allotment</i></b></p>
-	<p style="color: orangered; background-color: whitesmoke;"><b>Don't take this Serious! This is Just for Knowing your Current Position</b></p>
-	<br>
-	<p class="name">Enter Your Good Name</p>
-	<input type="text" name="name" id="name" required>
-</div>
-<br>
-<div class="userinputs">
-	<p class="stream"><b>For Validation, Enter your Details</b></p>
-	<p class="note">*** For Stream 2 Validation, Enter only XI and XII Standards Percentage ***</p>
-		<table align="center">
-		<tr>
-			<td><b>JEE Percentage</b></td>
-			<td><input type="number" id="jees1" name="jees1" min="0" max="100"></td>
-	    </tr>
-	    <tr>
-	    	<td><b>XI and XII Standards Percentage</b></td>
-	    	<td><input type="number" id="inters1" name="inters1" min="0" max="100" required></td>
-	    </tr>
-	</table>
-	<br>
-	<input type="button" value="VALIDATE FOR STREAM 1" id="submit1" onclick="calculates1()">
-	<input type="button" value="VALIDATE FOR STREAM 2" id="submit2" onclick="calculates2()">
-	<br>
-	<br>
-</div>
-<br>
-<div id="result" class="result1"></div>
-<script>
-	function calculates1()
-	{
-		var n=document.getElementById("name").value;
-		var js1=document.getElementById("jees1").value;
-		var is1=document.getElementById("inters1").value;
-		var s1=js1/2;
-		var f1=is1/2;
-		var s=s1+f1;
-		if(s<0 || s>100)
-		{
-			document.getElementById("result").innerHTML="Dear "+n+"! Please enter a valid percentage.";
-		}
-		else if(s>=90)
-		{
-			document.getElementById("result").innerHTML="Dear "+n+"! There are high chances for selection.";
-		}
-		else if(s>=80 && s<90)
-		{
-			document.getElementById("result").innerHTML="Dear "+n+"! There are fairly higher chances for selection.";
-		}
-		else
-		{
-			document.getElementById("result").innerHTML="Dear "+n+"! There are low chances for selection, But definitely try for next rounds.";
-		}
-	}
-	function calculates2()
-	{
-		var n1=document.getElementById("name").value;
-		var is2=document.getElementById("inters1").value;
-		if(is2<0 || is2>100)
-		{
-			document.getElementById("result").innerHTML="Dear "+n1+"! Please enter a valid percentage.";
-		}
-		else if(is2>=90)
-		{
-			document.getElementById("result").innerHTML="Dear "+n1+"! There are high chances for selection.";		
-		}
-		else if(is2>=80 && is2<90)
-		{
-			document.getElementById("result").innerHTML="Dear "+n1+"! There are fairly higher chances for selection.";
-		}
-		else
-		{
-			document.getElementById("result").innerHTML="Dear "+n1+"! There are low chances for selection, But definitely try for next rounds.";
-		}
-	}
-</script>
+
+<body style="background-color: peachpuff;">
+    <h1>ADMISSIONS PORTAL</h1>
+    <div class="portal">
+        <br>
+        <a href="https://www.sastra.edu/admissions-2021/3268-applicant-portal.html"><b>CLICK HERE</b></a> <b>for online
+            application portal of Sastra University</b>
+        <br>
+        <br>
+        <a href="https://www.sastra.edu/sastraadmissions/"><b>CLICK HERE</b></a> <b>for</b> <i><b>Information</b></i>
+        <b>regarding Admissions in Sastra University</b>
+        <br>
+        <br>
+        <p class="fullinfo"><span class="glyphicon glyphicon-arrow-right"> For More Information Regarding Admissions,
+                Visit <a href="https://www.sastra.edu/"><b>SASTRA</b></a>. <span class="glyphicon glyphicon-arrow-left">
+        </p>
+    </div>
+    <br>
+    <div class="warnings">
+        <p style="color: darkslateblue; background-color: lightpink;"><i><b>Quick Validation based on Previous year
+                    patterns for Round-I allotment</i></b></p>
+        <p style="color: rgb(243, 74, 12); background-color: lightpink;"><b>Don't take this Serious! This is Just for
+                Knowing
+                your Current Position</b></p>
+        <br>
+        <p class="name">Enter Your Good Name</p>
+        <input type="text" name="name" id="name" required>
+    </div>
+    <br>
+    <div class="userinputs">
+        <p class="stream"><b>For Validation, Enter your Details</b></p>
+        <p class="note">*** For Stream 2 Validation, Enter only XI and XII Standards Percentage ***</p>
+        <table align="center">
+            <tr>
+                <td><b>JEE Percentage</b></td>
+                <td><input type="number" id="jees1" name="jees1" min="0" max="100"></td>
+            </tr>
+            <tr>
+                <td><b>XI and XII Standards Percentage</b></td>
+                <td><input type="number" id="inters1" name="inters1" min="0" max="100" required></td>
+            </tr>
+        </table>
+        <br>
+        <input type="button" value="VALIDATE FOR STREAM 1" id="submit1" onclick="calculates1()">
+        <input type="button" value="VALIDATE FOR STREAM 2" id="submit2" onclick="calculates2()">
+        <br>
+        <br>
+    </div>
+    <br>
+    <div id="result" class="result1"></div>
+    <script>
+        function calculates1() {
+            var n = document.getElementById("name").value;
+            var js1 = document.getElementById("jees1").value;
+            var is1 = document.getElementById("inters1").value;
+            var s1 = js1 / 2;
+            var f1 = is1 / 2;
+            var s = s1 + f1;
+            if (s < 0 || s > 100) {
+                document.getElementById("result").innerHTML = "Dear " + n + "! Please enter a valid percentage.";
+            }
+            else if (s >= 90) {
+                document.getElementById("result").innerHTML = "Dear " + n + "! There are high chances for selection.";
+            }
+            else if (s >= 80 && s < 90) {
+                document.getElementById("result").innerHTML = "Dear " + n + "! There are fairly higher chances for selection.";
+            }
+            else {
+                document.getElementById("result").innerHTML = "Dear " + n + "! There are low chances for selection, But definitely try for next rounds.";
+            }
+        }
+        function calculates2() {
+            var n1 = document.getElementById("name").value;
+            var is2 = document.getElementById("inters1").value;
+            if (is2 < 0 || is2 > 100) {
+                document.getElementById("result").innerHTML = "Dear " + n1 + "! Please enter a valid percentage.";
+            }
+            else if (is2 >= 90) {
+                document.getElementById("result").innerHTML = "Dear " + n1 + "! There are high chances for selection.";
+            }
+            else if (is2 >= 80 && is2 < 90) {
+                document.getElementById("result").innerHTML = "Dear " + n1 + "! There are fairly higher chances for selection.";
+            }
+            else {
+                document.getElementById("result").innerHTML = "Dear " + n1 + "! There are low chances for selection, But definitely try for next rounds.";
+            }
+        }
+    </script>
 </body>
+
 </html>
