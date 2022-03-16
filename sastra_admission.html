@@ -136,11 +136,11 @@
         <table align="center">
             <tr>
                 <td><b>JEE Percentage</b></td>
-                <td><input type="number" id="jees1" name="jees1" min="0" max="100"></td>
+                <td><input type="number" id="jees1" name="jees1" ></td>
             </tr>
             <tr>
                 <td><b>XI and XII Standards Percentage</b></td>
-                <td><input type="number" id="inters1" name="inters1" min="0" max="100" required></td>
+                <td><input type="number" id="inters1" name="inters1"></td>
             </tr>
         </table>
         <br>
@@ -187,7 +187,7 @@
             else if (is2 >= 80 && is2 < 90) {
                 document.getElementById("result").innerHTML = "Dear " + n1 + "! There are fairly higher chances for selection.";
             }
-             else if(is2>=0 && is2<=50){
+             else if(is2<=0 && is2>=50){
                 document.getElementById("result").innerHTML = "Dear " + n + "! we regret to inform that you can't get admission in SASTRA University. we wish you better luck for your future!";
             }
             else {
